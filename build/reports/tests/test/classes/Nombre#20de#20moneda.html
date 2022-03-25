@@ -3,17 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta http-equiv="x-ua-compatible" content="IE=edge"/>
-<title>Test results - Class consumo reqres</title>
+<title>Test results - Class Nombre de moneda</title>
 <link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
 <link href="../css/style.css" rel="stylesheet" type="text/css"/>
 <script src="../js/report.js" type="text/javascript"></script>
 </head>
 <body>
 <div id="content">
-<h1>Class consumo reqres</h1>
+<h1>Class Nombre de moneda</h1>
 <div class="breadcrumbs">
 <a href="../index.html">all</a> &gt; 
-<a href="../packages/default-package.html">default-package</a> &gt; consumo reqres</div>
+<a href="../packages/default-package.html">default-package</a> &gt; Nombre de moneda</div>
 <div id="summary">
 <table>
 <tr>
@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">2</div>
+<div class="counter">1</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">2.316s</div>
+<div class="counter">0.469s</div>
 <p>duration</p>
 </div>
 </td>
@@ -78,13 +78,8 @@
 </tr>
 </thead>
 <tr>
-<td class="success">Obtener un error por usuario no encontrado</td>
-<td class="success">2.006s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">Obtener un usuario dado un identificador</td>
-<td class="success">0.310s</td>
+<td class="success">Convertir de moneda ISO a nombre formal</td>
+<td class="success">0.469s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -92,11 +87,22 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2022-03-25 00:55:45 INFO  ReqresStepDefinition:50 23
-{
-    
-}
-2022-03-25 00:55:47 INFO  ReqresStepDefinition:83 2
+<pre>2022-03-25 00:55:48 INFO  ConvertCurrencyNameTestStepDefinition:44 &lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:web=&quot;http://www.oorsprong.org/websamples.countryinfo&quot;&gt;
+    &lt;soapenv:Header/&gt;
+    &lt;soapenv:Body&gt;
+        &lt;web:CurrencyName&gt;
+            &lt;web:sCurrencyISOCode&gt;COP&lt;/web:sCurrencyISOCode&gt;
+        &lt;/web:CurrencyName&gt;
+    &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+
+&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
+  &lt;soap:Body&gt;
+    &lt;m:CurrencyNameResponse xmlns:m=&quot;http://www.oorsprong.org/websamples.countryinfo&quot;&gt;
+      &lt;m:CurrencyNameResult&gt;Pesos&lt;/m:CurrencyNameResult&gt;
+    &lt;/m:CurrencyNameResponse&gt;
+  &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
 </pre>
 </span>
 </div>

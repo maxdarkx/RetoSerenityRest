@@ -34,19 +34,6 @@ public class ReqresStepDefinition {
     private String CORRECT_USER= "2";
     private int CORRECT_USER_ID= 2;
     private String EMPTY_RESPONSE = "";
-    private String USER_STRING = "{\n" +
-            "    \"data\": {\n" +
-            "        \"id\": 2,\n" +
-            "        \"email\": \"janet.weaver@reqres.in\",\n" +
-            "        \"first_name\": \"Janet\",\n" +
-            "        \"last_name\": \"Weaver\",\n" +
-            "        \"avatar\": \"https://reqres.in/img/faces/2-image.jpg\"\n" +
-            "    },\n" +
-            "    \"support\": {\n" +
-            "        \"url\": \"https://reqres.in/#support-heading\",\n" +
-            "        \"text\": \"To keep ReqRes free, contributions towards server costs are appreciated!\"\n" +
-            "    }\n" +
-            "}";
 
 
     private final HashMap<String, Object> headers = new HashMap<>();
