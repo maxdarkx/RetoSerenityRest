@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.juanmaya.runner.rest.ReqresRunner" tests="0" skipped="0" failures="0" errors="0" timestamp="1970-01-01T00:00:00" hostname="juan-Forward-Unto-Dawn" time="0.0">
+  <properties/>
+  <system-out><![CDATA[
+?[33mUndefined scenarios:?[0m
+?[33mfile:///home/juan/Escritorio/QASofkaWorkspace/RetoSerenityRest/src/test/resources/features/soap/Reqres.feature:6?[0m# Obtener un error por usuario no encontrado
+
+1 Scenarios (?[33m1 undefined?[0m)
+3 Steps (?[33m3 undefined?[0m)
+0m0,240s
+
+
+You can implement missing steps with the snippets below:
+
+@Given("que se esta probando la base de datos de usuario")
+public void queSeEstaProbandoLaBaseDeDatosDeUsuario() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@When("se ingresa un id inexistente en el servicio")
+public void seIngresaUnIdInexistenteEnElServicio() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@Then("se retornara un codigo de error")
+public void seRetornaraUnCodigoDeError() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+]]></system-out>
+  <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+log4j:WARN No appenders could be found for logger (freemarker.cache).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+]]></system-err>
+</testsuite>

@@ -1,6 +1,5 @@
 package com.juanmaya.task;
 
-import io.cucumber.java.eo.Do;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.rest.interactions.Post;

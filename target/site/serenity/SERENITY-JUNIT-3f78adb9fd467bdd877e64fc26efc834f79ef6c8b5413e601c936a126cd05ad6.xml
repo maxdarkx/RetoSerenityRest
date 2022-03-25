@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="consumo reqres" skipped="0" tests="2" time="2.35" timestamp="2022-03-24 11:51:05"><testcase name="Obtener un error por usuario no encontrado"/><testcase name="Obtener un usuario dado un identificador"/></testsuite>

@@ -37,7 +37,7 @@ public class ConvertCurrencyNameTestStepDefinition {
     @Given("dado que el usuario esta en el recurso web indicando el nombre de moneda ISO {string}")
     public void dadoQueElUsuarioEstaEnElRecursoWebIndicandoElNombreDeMonedaISO(String moneyIsoCode) {
         setUpLog4j2();
-        actor.can(CallAnApi.at(URL_BASE));
+        actor.whoCan(CallAnApi.at(URL_BASE));
         headers.put("Content-Type","text/xml;charset=UTF-8");
         headers.put("SOAPAction","");
         bodyRequest = defineBodyRequest(moneyIsoCode);
