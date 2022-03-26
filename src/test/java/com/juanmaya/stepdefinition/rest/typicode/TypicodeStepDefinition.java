@@ -1,13 +1,16 @@
 package com.juanmaya.stepdefinition.rest.typicode;
 
 import com.juanmaya.model.typicode.PostCreatedUser;
+import com.juanmaya.question.reqres.DeleteResponse;
 import com.juanmaya.question.typicode.PostUserCreateQuestion;
 import com.juanmaya.stepdefinition.rest.reqres.ReqresStepDefinition;
+import com.juanmaya.task.typicode.DoDelete;
 import com.juanmaya.util.LoginKey;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.http.ContentType;
+import io.restassured.response.ValidatableResponse;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 import net.serenitybdd.screenplay.rest.questions.LastResponse;
@@ -18,22 +21,26 @@ import org.apache.log4j.PropertyConfigurator;
 import java.util.HashMap;
 
 import static com.google.common.base.StandardSystemProperty.USER_DIR;
+import static com.juanmaya.question.reqres.DeleteResponse.response;
 import static com.juanmaya.task.reqres.DoPost.doPost;
+import static com.juanmaya.task.typicode.DoDelete.doDelete;
 import static com.juanmaya.util.FileUtilities.readFile;
 import static com.juanmaya.util.Log4jValues.LOG4J_LINUX_PROPERTIES_FILE_PATH;
 import static com.juanmaya.util.Log4jValues.LOG4J_WINDOWS_PROPERTIES_FILE_PATH;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.rest.questions.ResponseConsequence.seeThatResponse;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.notNullValue;
+import static org.hamcrest.Matchers.*;
 
 public class TypicodeStepDefinition {
     private final static String URL_BASE = "https://jsonplaceholder.typicode.com";
     private final static String RESOURCE_GET_USER = "/posts/{id}";
     private final static String RESOURCE_CREATE_USER = "/posts";
+    private final static String RESOURCE_DELETE_USER = "/posts/{id}";
     private final static String BODY_POST_USER = "bar";
     private final static String TITLE_POST_USER = "foo";
     private final static String USERID_POST_USER = "1";
+    private final static String USERID_DELETE_USER = "1";
+
     private final static String JAVA_DESCRIPTION_FILE_PATH = "src/test/resources/files/soap/createUser.json";
 
     private final HashMap<String, Object> headers = new HashMap<>();
@@ -78,6 +85,38 @@ public class TypicodeStepDefinition {
                 seeThat("El id no debe ser nulo", actor1 -> tempUser.getUserId(), equalTo(USERID_POST_USER))
         );
     }
+
+    @Given("que se esta probando la funcionalidad de borrado de usuarios del sitio")
+    public void que_se_esta_probando_la_funcionalidad_de_borrado_de_usuarios_del_sitio() {
+        setUpLog4j2();
+        actor.whoCan(CallAnApi.at(URL_BASE));
+        headers.put("Content-Type", ContentType.JSON);
+        idRequest = USERID_DELETE_USER;
+        resource = RESOURCE_DELETE_USER;
+        LOGGER.info(idRequest);
+    }
+
+    @When("se ingresan los datos del usuario a borrar del servicio")
+    public void se_ingresan_los_datos_del_usuario_a_borrar_del_servicio() {
+        actor.attemptsTo(
+               doDelete().usingTheResource(resource)
+                       .andIdToDelete(idRequest)
+        );
+    }
+
+    @Then("se retornara un codigo de aceptacion de borrado")
+    public void se_retornara_un_codigo_de_aceptacion_de_borrado() {
+        LastResponse.received().answeredBy(actor);
+        actor.should(
+                seeThatResponse("El codigo de respuesta debe ser " + HttpStatus.SC_OK,
+                        validatableResponse -> validatableResponse.statusCode(HttpStatus.SC_OK)
+                ));
+        actor.should(
+                seeThat("El body de la respuesta debe estar vacio",
+                response(), containsString("{}"))
+        );
+    }
+
 
 
 

@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <title>Crear un usuario dados sus datos personales</title>
+    <title>Eliminar un usuario del registro del sitio</title>
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
@@ -129,7 +129,7 @@
             > <a href="4f95fc239d57a7a00cfdf91d8853bfc9a210048f529a05e59a81dee247ca8a27.html">Rest</a>
             > <a href="0e3a6f9ae43c07cdd95f2c56bac6846d8ac3985fe3d3c9b7f2a82e644573b96d.html">Typicode</a>
             > <a href="320597d65b8689463c991456cfc9ede30fdb6bf1f79a8055836c360a7c238d6f.html">Consumo Typicode</a>
-        > Crear un usuario dados sus datos personales
+        > Eliminar un usuario del registro del sitio
         </span>
         </div>
         <div class="rightbg"></div>
@@ -189,7 +189,7 @@
                             <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></a></span>
                             <span class="test-case-title">
                                 <span class="success-color">
-                                    Crear un usuario dados sus datos personales
+                                    Eliminar un usuario del registro del sitio
                                         <span class="related-issue-title"></span>
                                 </span>
                             </span>
@@ -280,7 +280,7 @@
                         <td class="step-description-column">
                             <div class="step-description">
                                     <span class="top-level-step">
-                                                Given que se esta ordenando la base de datos del servicio
+                                                Given que se esta probando la funcionalidad de borrado de usuarios del sitio
                                         </span>
                                 <span class="evidence">
                                 </span>
@@ -288,7 +288,7 @@
                         </td>
 
                         <td width="130"><span class="top-level-step">SUCCESS</span></td>
-                        <td width="100"><span class="top-level-step">0.04s</span></td>
+                        <td width="100"><span class="top-level-step">0s</span></td>
                     </tr>
                     <tr class="test-SUCCESS">
 
@@ -306,7 +306,7 @@
                                 <a href="javaScript:void(0)" onClick="toggleDiv('stepSection1')"
                                    style="display:block;">
                                     <span class="top-level-step">
-                                                When se ingresan los datos personales de un usuario en el servicio
+                                                When se ingresan los datos del usuario a borrar del servicio
                                         </span>
                                 </a>
                                 <span class="evidence">
@@ -315,7 +315,7 @@
                         </td>
 
                         <td width="130"><span class="top-level-step">SUCCESS</span></td>
-                        <td width="100"><span class="top-level-step">1.6s</span></td>
+                        <td width="100"><span class="top-level-step">0.29s</span></td>
                     </tr>
                         <tr>
                             <td colspan="5">
@@ -337,7 +337,7 @@
                                 <a href="javaScript:void(0)" onClick="toggleDiv('stepSection1-0')"
                                    style="display:block;">
                                     <span class="nested-step">
-                                                Max do post
+                                                Max do delete
                                         </span>
                                 </a>
                                 <span class="evidence">
@@ -346,7 +346,7 @@
                         </td>
 
                         <td width="130"><span class="nested-step">SUCCESS</span></td>
-                        <td width="100"><span class="nested-step">1.5s</span></td>
+                        <td width="100"><span class="nested-step">0.29s</span></td>
                     </tr>
                         <tr>
                             <td colspan="5">
@@ -368,7 +368,7 @@
                                 <a href="javaScript:void(0)" onClick="toggleDiv('stepSection1-0-0')"
                                    style="display:block;">
                                     <span class="nested-step">
-                                                max executes a POST on the resource /posts
+                                                max executes a DELETE on the resource /posts/{id}
                                         </span>
                                 </a>
                                 <span class="evidence">
@@ -377,7 +377,7 @@
                         </td>
 
                         <td width="130"><span class="nested-step">SUCCESS</span></td>
-                        <td width="100"><span class="nested-step">1.47s</span></td>
+                        <td width="100"><span class="nested-step">0.28s</span></td>
                     </tr>
                         <tr>
                             <td colspan="5">
@@ -395,7 +395,7 @@
                         <td class="step-description-column">
                             <div class="step-description">
                                     <span class="nested-group-step">
-                                                POST https://jsonplaceholder.typicode.com/posts
+                                                DELETE https://jsonplaceholder.typicode.com/posts/1
                                         </span>
                                 <span class="evidence">
                                         <span class="piece-of-evidence">
@@ -411,16 +411,14 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4>Response</h4>
-                                        <p>Status code: 201</p>
-                                        <p>Content Type: application/json</p>
+                                        <p>Status code: 200</p>
+                                        <p>Content Type: null</p>
                                         <h4>Request Headers</h4>
-                                        <pre>Accept=*/*<br>Content-Type=application/json; charset=UTF-8</pre>
-                                        <h4>Content Body</h4>
-                                        <pre>{<br>    &quot;title&quot;: &quot;foo&quot;,<br>    &quot;body&quot;: &quot;bar&quot;,<br>    &quot;userId&quot;: &quot;1&quot;<br>}</pre>
+                                        <pre>Accept=*/*</pre>
                                         <h4>Response Headers</h4>
-                                        <pre>Date: Sat, 26 Mar 2022 03:25:44 GMT<br>Content-Type: application/json; charset=utf-8<br>Content-Length: 67<br>Connection: keep-alive<br>X-Powered-By: Express<br>X-Ratelimit-Limit: 1000<br>X-Ratelimit-Remaining: 999<br>X-Ratelimit-Reset: 1648265188<br>Vary: Origin, X-HTTP-Method-Override, Accept-Encoding<br>Access-Control-Allow-Credentials: true<br>Cache-Control: no-cache<br>Pragma: no-cache<br>Expires: -1<br>Access-Control-Expose-Headers: Location<br>Location: http://jsonplaceholder.typicode.com/posts/101<br>X-Content-Type-Options: nosniff<br>Etag: W/&quot;43-e0UvNeXth+6+06UFNnGIVUOlAcw&quot;<br>Via: 1.1 vegur<br>CF-Cache-Status: DYNAMIC<br>Expect-CT: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;<br>Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report\/v3?s=9KYRiEhpFRUjV%2BGgD%2FsI4XIVhPoU8spXsi5oqy6AVOsqyYKTAdJA05olKXe6rAGKe5lKNq2xkJuNoBpnub%2BUtuq2bCgYHQM%2FjwilZnmn58q1vGrPX2xKe4SpjyEiMg2YIL1rgCBLIKX3HznTnan3&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}<br>NEL: {&quot;success_fraction&quot;:0,&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}<br>Server: cloudflare<br>CF-RAY: 6f1cc7de88172263-MIA<br>alt-svc: h3=&quot;:443&quot;; ma=86400, h3-29=&quot;:443&quot;; ma=86400</pre>
+                                        <pre>Date: Sat, 26 Mar 2022 03:25:44 GMT<br>Content-Type: application/json; charset=utf-8<br>Content-Length: 2<br>Connection: keep-alive<br>X-Powered-By: Express<br>X-Ratelimit-Limit: 1000<br>X-Ratelimit-Remaining: 998<br>X-Ratelimit-Reset: 1648265188<br>Vary: Origin, Accept-Encoding<br>Access-Control-Allow-Credentials: true<br>Cache-Control: no-cache<br>Pragma: no-cache<br>Expires: -1<br>X-Content-Type-Options: nosniff<br>Etag: W/&quot;2-vyGp6PvFo4RvsFtPoIWeCReyIC8&quot;<br>Via: 1.1 vegur<br>CF-Cache-Status: DYNAMIC<br>Expect-CT: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;<br>Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report\/v3?s=ZjUJSLCfTymbxlmYhJZRGnpGLkeRmaQWa4OmGU394FpP6eqMqeUqs9bUZtn975ZpSV7A0BYacA14v9Gr4zUOWIX%2F1qmVSbz%2F2zHvfXkiLYckbKP3LbE9QYbJrBm2p8XUT2hiRQ1mLrunYraKkm%2BD&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}<br>NEL: {&quot;success_fraction&quot;:0,&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}<br>Server: cloudflare<br>CF-RAY: 6f1cc7e1baf38d9c-MIA<br>alt-svc: h3=&quot;:443&quot;; ma=86400, h3-29=&quot;:443&quot;; ma=86400</pre>
                                     <h4>Response Body</h4>
-                                        <pre>{<br>    &quot;title&quot;: &quot;foo&quot;,<br>    &quot;body&quot;: &quot;bar&quot;,<br>    &quot;userId&quot;: &quot;1&quot;,<br>    &quot;id&quot;: 101<br>}</pre>
+                                        <pre>{<br>    <br>}</pre>
                                 </div>
                             </div>
                         </div>
@@ -461,7 +459,7 @@
                                 <a href="javaScript:void(0)" onClick="toggleDiv('stepSection2')"
                                    style="display:block;">
                                     <span class="top-level-step">
-                                                Then se retornara un codigo de aceptacion y el usuario creado
+                                                Then se retornara un codigo de aceptacion de borrado
                                         </span>
                                 </a>
                                 <span class="evidence">
@@ -470,7 +468,7 @@
                         </td>
 
                         <td width="130"><span class="top-level-step">SUCCESS</span></td>
-                        <td width="100"><span class="top-level-step">0.17s</span></td>
+                        <td width="100"><span class="top-level-step">0.01s</span></td>
                     </tr>
                         <tr>
                             <td colspan="5">
@@ -488,7 +486,7 @@
                         <td class="step-description-column">
                             <div class="step-description">
                                     <span class="nested-group-step">
-                                                El codigo de respuesta debe ser 201
+                                                El codigo de respuesta debe ser 200
                                         </span>
                                 <span class="evidence">
                                 </span>
@@ -496,7 +494,7 @@
                         </td>
 
                         <td width="130"><span class="nested-group-step">SUCCESS</span></td>
-                        <td width="100"><span class="nested-group-step">0.01s</span></td>
+                        <td width="100"><span class="nested-group-step">0s</span></td>
                     </tr>
                     <tr class="test-SUCCESS">
 
@@ -510,51 +508,7 @@
                         <td class="step-description-column">
                             <div class="step-description">
                                     <span class="nested-group-step">
-                                                Then El titulo del usuario creado debe ser should be 'foo'
-                                        </span>
-                                <span class="evidence">
-                                </span>
-                            </div>
-                        </td>
-
-                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
-                        <td width="100"><span class="nested-group-step">0s</span></td>
-                    </tr>
-                    <tr class="test-SUCCESS">
-
-                        <td width="70" class="step-icon">
-                            <a name="2-2"></a>
-                                <span style="margin-left: 40px;"
-                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
-                                </span>
-                        </td>
-
-                        <td class="step-description-column">
-                            <div class="step-description">
-                                    <span class="nested-group-step">
-                                                Then El cuerpo del usuario creado debe ser should be 'bar'
-                                        </span>
-                                <span class="evidence">
-                                </span>
-                            </div>
-                        </td>
-
-                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
-                        <td width="100"><span class="nested-group-step">0s</span></td>
-                    </tr>
-                    <tr class="test-SUCCESS">
-
-                        <td width="70" class="step-icon">
-                            <a name="2-3"></a>
-                                <span style="margin-left: 40px;"
-                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
-                                </span>
-                        </td>
-
-                        <td class="step-description-column">
-                            <div class="step-description">
-                                    <span class="nested-group-step">
-                                                Then El id no debe ser nulo should be '1'
+                                                Then El body de la respuesta debe estar vacio should be a string containing '{}'
                                         </span>
                                 <span class="evidence">
                                 </span>
@@ -571,7 +525,7 @@
                 <tr class="test-SUCCESS">
                         <td colspan="2"></td>
                     <td width="130"><span class="top-level-step"><em>SUCCESS</em></span></td>
-                    <td width="100"><span class="top-level-step"><em>1.89s</em></span></td>
+                    <td width="100"><span class="top-level-step"><em>0.3s</em></span></td>
                 </tr>
 
             </table>
