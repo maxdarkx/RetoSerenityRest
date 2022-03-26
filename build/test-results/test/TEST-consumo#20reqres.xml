@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="consumo reqres" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-03-25T05:55:45" hostname="juan-Forward-Unto-Dawn" time="2.316">
+<testsuite name="consumo reqres" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-03-26T00:57:47" hostname="juan-Forward-Unto-Dawn" time="3.409">
   <properties/>
-  <testcase name="Obtener un error por usuario no encontrado" classname="consumo reqres" time="2.006"/>
-  <testcase name="Obtener un usuario dado un identificador" classname="consumo reqres" time="0.31"/>
-  <system-out><![CDATA[2022-03-25 00:55:45 INFO  ReqresStepDefinition:50 23
+  <testcase name="Obtener un error por usuario no encontrado" classname="consumo reqres" time="2.539"/>
+  <testcase name="Obtener un usuario dado un identificador" classname="consumo reqres" time="0.307"/>
+  <testcase name="crear un usuario dado su nombre y trabajo" classname="consumo reqres" time="0.563"/>
+  <system-out><![CDATA[2022-03-25 19:57:48 INFO  ReqresStepDefinition:64 23
 {
     
 }
-2022-03-25 00:55:47 INFO  ReqresStepDefinition:83 2
+2022-03-25 19:57:50 INFO  ReqresStepDefinition:97 2
+2022-03-25 19:57:50 INFO  ReqresStepDefinition:132 Creando el usuario con name = morpheus y job = leader
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

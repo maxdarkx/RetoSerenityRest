@@ -1,4 +1,4 @@
-package com.juanmaya.model;
+package com.juanmaya.model.reqres;
 
 
 

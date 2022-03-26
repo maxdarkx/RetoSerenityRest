@@ -13,7 +13,7 @@ import org.apache.log4j.PropertyConfigurator;
 import java.util.HashMap;
 
 import static com.juanmaya.question.soap.SoapResponse.response;
-import static com.juanmaya.task.DoPost.doPost;
+import static com.juanmaya.task.reqres.DoPost.doPost;
 import static com.juanmaya.util.CurrencyISOCode.MONEY_ISO_CODE;
 import static com.juanmaya.util.FileUtilities.readFile;
 import static com.juanmaya.util.Log4jValues.LOG4J_LINUX_PROPERTIES_FILE_PATH;

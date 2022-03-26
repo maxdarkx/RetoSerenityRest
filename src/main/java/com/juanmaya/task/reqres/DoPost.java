@@ -1,4 +1,4 @@
-package com.juanmaya.task;
+package com.juanmaya.task.reqres;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;

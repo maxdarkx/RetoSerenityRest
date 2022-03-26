@@ -1,28 +1,28 @@
-package com.juanmaya.model;
+package com.juanmaya.model.reqres;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class Support {
+public class DataUser {
 
-    private String url;
-    private String text;
+    private Data data;
+    private Support support;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    public String getUrl() {
-        return url;
+    public Data getData() {
+        return data;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setData(Data data) {
+        this.data = data;
     }
 
-    public String getText() {
-        return text;
+    public Support getSupport() {
+        return support;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setSupport(Support support) {
+        this.support = support;
     }
 
     public Map<String, Object> getAdditionalProperties() {
@@ -32,5 +32,6 @@ public class Support {
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
     }
+
 }
 

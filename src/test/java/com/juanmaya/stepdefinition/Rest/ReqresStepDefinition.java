@@ -1,8 +1,10 @@
 package com.juanmaya.stepdefinition.Rest;
 
-import com.juanmaya.model.Data;
-import com.juanmaya.model.DataUser;
-import com.juanmaya.question.soap.GetUserQuestion;
+import com.juanmaya.model.reqres.CreateUser;
+import com.juanmaya.model.reqres.Data;
+import com.juanmaya.question.reqres.GetUserQuestion;
+import com.juanmaya.question.reqres.PostUserCreateQuestion;
+import com.juanmaya.util.LoginKey;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -19,26 +21,38 @@ import java.util.HashMap;
 
 import static com.google.common.base.StandardSystemProperty.USER_DIR;
 import static com.juanmaya.question.soap.SoapResponse.response;
-import static com.juanmaya.task.DoGet.doGet;
+import static com.juanmaya.task.reqres.DoGet.doGet;
+import static com.juanmaya.task.reqres.DoPost.doPost;
+import static com.juanmaya.util.FileUtilities.readFile;
 import static com.juanmaya.util.Log4jValues.LOG4J_LINUX_PROPERTIES_FILE_PATH;
 import static com.juanmaya.util.Log4jValues.LOG4J_WINDOWS_PROPERTIES_FILE_PATH;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.rest.questions.ResponseConsequence.seeThatResponse;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.both;
+import static org.hamcrest.Matchers.notNullValue;
+
 
 public class ReqresStepDefinition {
     private String URL_BASE = "https://reqres.in";
     private String RESOURCE = "/api/users/{id}";
+    private String RESOURCE_CREATE_USER ="/api/users";
     private String EMPTY_USER= "23";
     private String CORRECT_USER= "2";
     private int CORRECT_USER_ID= 2;
     private String EMPTY_RESPONSE = "";
+    private String JAVA_DESCRIPTION_FILE_PATH = "src/test/resources/files/soap/login.json";
+    private String NAME_POST_USER = "morpheus";
+    private String JOB_POST_USER = "leader";
+    private String ID_POST_USER = "23";
 
 
     private final HashMap<String, Object> headers = new HashMap<>();
     private final Actor actor = Actor.named("juan");
     private String idRequest;
+    private String bodyRequest;
+    private String resource;
     private static final Logger LOGGER  = Logger.getLogger(ReqresStepDefinition.class);
 
     @Given("que se esta probando la base de datos de usuario")
@@ -108,6 +122,41 @@ public class ReqresStepDefinition {
 
     }
 
+    @Given("que se esta creando la base de datos del servicio")
+    public void queSeEstaCreandoLaBaseDeDatosDelServicio() {
+        setUpLog4j2();
+        actor.whoCan(CallAnApi.at(URL_BASE));
+        headers.put("Content-Type", ContentType.JSON);
+        bodyRequest = defineBodyRequest();
+        resource = RESOURCE_CREATE_USER;
+        LOGGER.info("Creando el usuario con name = "+NAME_POST_USER+" y job = "+JOB_POST_USER);
+    }
+
+    @When("se ingresan los datos de un usuario en el servicio")
+    public void seIngresanLosDatosDeUnUsuarioEnElServicio() {
+        actor.attemptsTo(
+                doPost()
+                        .usingTheResource(resource)
+                        .withHeaders(headers)
+                        .andBodyRequest(bodyRequest)
+        );
+    }
+
+    @Then("se retornara un codigo de aceptacion y el usuario creado")
+    public void seRetornaraUnCodigoDeAceptacionYElUsuarioCreado() {
+        CreateUser usuarioNuevo = new PostUserCreateQuestion().answeredBy(actor);
+        actor.should(
+                seeThatResponse("El codigo de respuesta debe ser " + HttpStatus.SC_CREATED,
+                        validatableResponse -> validatableResponse.statusCode(HttpStatus.SC_CREATED)
+                )
+        );
+        actor.should(
+                seeThat("El nombre del usuario creado debe fue", actor1 -> usuarioNuevo.getName(), equalTo(NAME_POST_USER)),
+                seeThat("El trabajo del usuario creado debe fue", actor1 -> usuarioNuevo.getJob(),equalTo(JOB_POST_USER)),
+                seeThat("El id no debe ser nulo", actor1 -> usuarioNuevo.getId(), notNullValue())
+        );
+    }
+
     private void setUpLog4j2(){
         String os = System.getProperty("os.name").toLowerCase().substring(0,3);
         switch (os)
@@ -119,5 +168,12 @@ public class ReqresStepDefinition {
                 PropertyConfigurator.configure(USER_DIR.value() + LOG4J_LINUX_PROPERTIES_FILE_PATH.getValue());
                 break;
         }
+    }
+
+    private String defineBodyRequest()
+    {
+        return readFile(JAVA_DESCRIPTION_FILE_PATH)
+                .replace(LoginKey.NAME.getValue(), NAME_POST_USER)
+                .replace(LoginKey.JOB.getValue(), JOB_POST_USER);
     }
 }
