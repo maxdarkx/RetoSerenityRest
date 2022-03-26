@@ -1,3 +1,5 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
-"consumo reqres","Obtener un error por usuario no encontrado","SUCCESS","2022-03-25T00:55:45.298306-05:00[America/Bogota]","0.0","1.94"
-"consumo reqres","Obtener un usuario dado un identificador","SUCCESS","2022-03-25T00:55:47.245352-05:00[America/Bogota]","0.0","0.31"
+"consumo reqres","Obtener un error por usuario no encontrado","SUCCESS","2022-03-25T21:19:35.119233-05:00[America/Bogota]","0.0","6.1"
+"consumo reqres","Obtener un usuario dado un identificador","SUCCESS","2022-03-25T21:19:41.220132-05:00[America/Bogota]","0.0","0.19"
+"consumo reqres","crear un usuario dado su nombre y trabajo","SUCCESS","2022-03-25T21:19:41.414481-05:00[America/Bogota]","0.0","0.52"
+"Consumo typicode","Crear un usuario dados sus datos personales","SUCCESS","2022-03-25T21:19:32.999139-05:00[America/Bogota]","0.0","1.79"

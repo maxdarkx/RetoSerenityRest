@@ -1,8 +1,15 @@
 package com.juanmaya.util;
 
+import org.asciidoctor.ast.Title;
+
 public enum LoginKey {
     NAME("[name]"),
-    JOB("[job]");
+    JOB("[job]"),
+    TITLE("[title]"),
+    BODY("[body]"),
+    USERID("[userId]");
+
+
 
     private final String value;
 

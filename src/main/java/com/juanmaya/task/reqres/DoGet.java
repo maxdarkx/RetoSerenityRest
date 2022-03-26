@@ -37,6 +37,7 @@ public class DoGet implements Task {
         actor.attemptsTo(
                 Get.resource(resource)
                         .with( request -> request.pathParam("id",idRequest))
+
         );
     }
 }

@@ -1,4 +1,4 @@
-package com.juanmaya.stepdefinition.Rest;
+package com.juanmaya.stepdefinition.rest.reqres;
 
 import com.juanmaya.model.reqres.CreateUser;
 import com.juanmaya.model.reqres.Data;
@@ -30,22 +30,21 @@ import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.rest.questions.ResponseConsequence.seeThatResponse;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.both;
 import static org.hamcrest.Matchers.notNullValue;
 
 
 public class ReqresStepDefinition {
-    private String URL_BASE = "https://reqres.in";
-    private String RESOURCE = "/api/users/{id}";
-    private String RESOURCE_CREATE_USER ="/api/users";
-    private String EMPTY_USER= "23";
-    private String CORRECT_USER= "2";
-    private int CORRECT_USER_ID= 2;
-    private String EMPTY_RESPONSE = "";
-    private String JAVA_DESCRIPTION_FILE_PATH = "src/test/resources/files/soap/login.json";
-    private String NAME_POST_USER = "morpheus";
-    private String JOB_POST_USER = "leader";
-    private String ID_POST_USER = "23";
+    private final static String URL_BASE = "https://reqres.in";
+    private final static String RESOURCE_GET_USER = "/api/users/{id}";
+    private final static String RESOURCE_CREATE_USER ="/api/users";
+    private final static String EMPTY_USER= "23";
+    private final static String CORRECT_USER= "2";
+    private final static int CORRECT_USER_ID= 2;
+    private final static String EMPTY_RESPONSE = "";
+    private final static String JAVA_DESCRIPTION_FILE_PATH = "src/test/resources/files/soap/login.json";
+    private final static String NAME_POST_USER = "morpheus";
+    private final static String JOB_POST_USER = "leader";
+    private final static String ID_POST_USER = "23";
 
 
     private final HashMap<String, Object> headers = new HashMap<>();
@@ -68,7 +67,7 @@ public class ReqresStepDefinition {
     public void seIngresaUnIdInexistenteEnElServicio() {
         actor.attemptsTo(
                 doGet()
-                        .usingTheResource(RESOURCE)
+                        .usingTheResource(RESOURCE_GET_USER)
                         .andIdRequest(idRequest)
         );
     }
@@ -101,7 +100,7 @@ public class ReqresStepDefinition {
     public void se_ingresa_un_id_presente_en_el_servicio() {
         actor.attemptsTo(
                 doGet()
-                        .usingTheResource(RESOURCE)
+                        .usingTheResource(RESOURCE_GET_USER)
                         .andIdRequest(idRequest)
         );
     }
