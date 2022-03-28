@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Consumo typicode" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-03-26T03:25:45" hostname="juan-Forward-Unto-Dawn" time="2.264">
+<testsuite name="Consumo typicode" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-03-28T02:52:00" hostname="FORWARD-UNTO-DA" time="1.536">
   <properties/>
-  <testcase name="Crear un usuario dados sus datos personales" classname="Consumo typicode" time="1.956"/>
-  <testcase name="Eliminar un usuario del registro del sitio" classname="Consumo typicode" time="0.308"/>
-  <system-out><![CDATA[2022-03-25 22:25:45 INFO  TypicodeStepDefinition:60 
-2022-03-25 22:25:47 INFO  TypicodeStepDefinition:96 1
+  <testcase name="Crear un usuario dados sus datos personales" classname="Consumo typicode" time="0.72"/>
+  <testcase name="Eliminar un usuario del registro del sitio" classname="Consumo typicode" time="0.816"/>
+  <system-out><![CDATA[2022-03-27 21:52:00 INFO  TypicodeStepDefinition:60 
+2022-03-27 21:52:01 INFO  TypicodeStepDefinition:96 1
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
